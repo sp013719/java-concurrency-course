@@ -6,7 +6,7 @@ import java.util.List;
 public class WaitNotifyExample2 {
 
     static class SharedBuffer {
-        private List<Integer> buffer = new LinkedList<>();
+        private final List<Integer> buffer = new LinkedList<>();
         private final int capacity = 10;
 
         public synchronized void produce() throws InterruptedException {
@@ -65,7 +65,7 @@ public class WaitNotifyExample2 {
 
     static class Producer implements Runnable {
 
-        private SharedBuffer sharedBuffer;
+        private final SharedBuffer sharedBuffer;
 
         public Producer(SharedBuffer sharedBuffer) {
             this.sharedBuffer = sharedBuffer;
