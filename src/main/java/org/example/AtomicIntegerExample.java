@@ -30,6 +30,7 @@ public class AtomicIntegerExample {
 
     /**
      * Non-atomic increment method, not thread-safe
+     * To resolve race conditions, consider using synchronized blocks or methods.
      */
     private static void increment() {
         for (int i = 0; i < 10000; i++) {
